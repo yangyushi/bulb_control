@@ -77,11 +77,11 @@ class ConnectPanel(QWidget):
     def set_state(self, state: bool):
         if state:
             self.state.setPixmap(self.style().standardIcon(
-                getattr(QStyle, 'SP_DialogYesButton')
+                getattr(QStyle, 'SP_DialogApplyButton')
             ).pixmap(24, 24))
         else:
             self.state.setPixmap(self.style().standardIcon(
-                getattr(QStyle, 'SP_DialogNoButton')
+                getattr(QStyle, 'SP_DialogCancelButton')
             ).pixmap(24, 24))
 
     def set_button_callback(self, func):
