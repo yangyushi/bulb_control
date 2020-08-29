@@ -36,6 +36,10 @@ More features are being added.
 3. To change the brightness manually, drag the brightness slide.
 4. To start the automatic mode, check the "Automated Control" box.
 
+## Reference
+
+The communication between the bulb and the GUI is achieved using [Brain Dorey's code](https://github.com/briandorey/tp-link-LB130-Smart-Wi-Fi-Bulb). Very cool project.
+
 ## Extra Stuff: Establishing the connection
 
 I want to remote control the smart bulb whom located in a university lab in UK. It is not very straightforward because there are some restrictions for the internet access using the [eduroam](https://www.eduroam.org) system.
