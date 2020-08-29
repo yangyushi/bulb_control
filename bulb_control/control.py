@@ -2,7 +2,7 @@
 import time
 import threading
 from model import State
-from view import Slide, TimeEntry, AutoPanel, QHLine, Main, warn
+from view import Slide, TimeEntry, AutoPanel, QHLine, Main, warn, inform
 
 
 class Controller():
@@ -10,6 +10,7 @@ class Controller():
         self.gui = Main()
         self.state = State(self.gui.ip, self.gui.is_simulation)
         self.gui.slide.set_value(self.brightness)
+        self.gui.set_connection_state(self.state.connected)
         self.__set_slots()
         if self.state.connected:
             self.__set_function_slots()
@@ -49,7 +50,10 @@ class Controller():
         self.gui.auto.set_check_callback(self.__set_auto_mode)
 
     def __disable_function_slots(self):
-        self.gui.disconnect_function_slots()
+        try:
+            self.gui.disconnect_function_slots()
+        except TypeError:
+            pass
         self.gui.slide.set_change_callback(lambda: warn("Not connected to bulb"))
         self.gui.slide.set_release_callback(lambda: warn("Not connected to bulb"))
         self.gui.auto.set_check_callback(lambda: warn("Not connected to bulb"))
@@ -58,7 +62,7 @@ class Controller():
         self.state = State(self.gui.ip, self.gui.is_simulation)
         self.gui.set_connection_state(self.state.connected)
         if self.state.connected:
-            warn("Connection Succeeded!")
+            inform("Connection Succeeded!")
             self.__set_function_slots()
         else:
             warn("Connection Failed!")
@@ -77,6 +81,7 @@ class Controller():
 
     def __set_auto_mode(self):
         if self.gui.is_checked:
+            inform("Auto Mode Started")
             thread = threading.Thread(target=self.auto_control, daemon=True)
             thread.start()
         else:

@@ -15,6 +15,13 @@ def warn(message):
     msg.exec_()
 
 
+def inform(message):
+    msg = QMessageBox()
+    msg.minimumWidth = 300
+    msg.setIcon(QMessageBox.Information)
+    msg.setText(message)
+    msg.exec_()
+
 class Main(QMainWindow):
     def __init__(self):
         super().__init__()
