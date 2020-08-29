@@ -40,7 +40,7 @@ More features are being added.
 
 I want to remote control the smart bulb whom located in a university lab in UK. It is not very straightforward because there are some restrictions for the internet access using the [eduroam](https://www.eduroam.org) system.
 
-There is a small WIFI network that comes with the smart bulb. Thanks to this extra WiFi, I managed to connect everything together. Firstly, I connected my Raspberry Pi to this WiFi to access this smart bulb. Then I physically connected my PC to the Raspberry Pi, while the PC had Internet access using eduroam. See the following chat for what I meant.
+There is a built-in WiFi network from the Kasa smart bulb. Thanks to this extra WiFi, I managed to connect everything together. Firstly, I connected my Raspberry Pi to this WiFi to access this smart bulb. Then I physically connected my PC to the Raspberry Pi, while the PC had Internet access using eduroam. See the following chat for what I meant.
 
 ```
 ┌─────────────┐                          
