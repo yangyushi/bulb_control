@@ -65,7 +65,7 @@ class ConnectPanel(QWidget):
         self.ip_edit = QLineEdit("192.168.0.1")
         self.state = QLabel()
         self.simulate_check = QCheckBox("Simulate Bulb")
-        self.simulate_check.setChecked(True)
+        self.simulate_check.setChecked(False)
         self.button = QPushButton("Connect")
 
         self.layout.addWidget(QLabel("IP address"), 0, 0)

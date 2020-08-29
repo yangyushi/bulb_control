@@ -58,6 +58,7 @@ class Controller():
         self.state = State(self.gui.ip, self.gui.is_simulation)
         self.gui.set_connection_state(self.state.connected)
         if self.state.connected:
+            warn("Connection Succeeded!")
             self.__set_function_slots()
         else:
             warn("Connection Failed!")

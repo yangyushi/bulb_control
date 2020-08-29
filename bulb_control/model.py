@@ -31,7 +31,6 @@ class State:
     def brightness(self, value):
         self.bulb.brightness = value
 
-
     def transit(self, target_value):
         """
         Args:
@@ -42,6 +41,6 @@ class State:
         if diff == 0:
             return
         else:
-            diff = diff / abs(diff)  # change 1 per second
-            self.brightness += diff
+            diff = int(diff / abs(diff))  # change 1 per second
+            self.brightness = self.brightness + diff
             return
